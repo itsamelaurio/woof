@@ -1,20 +1,30 @@
 import React from 'react'
+import axios from 'axios'
 
 export default function Component() {
 
-    $.ajax({
-        url: `https://api.thedogapi.com/v1/images/search`,
-        data: {
-            "x-api-key": "30777f0e-7f95-4c79-b4b3-b657b6bdd296",
-        },
-        dataType: "JSON"
-    }).done(function (data) {
-        console.log(data);
-    })
+    let [image, setImage] = React.useState("");
 
+    function componentDidMount() {
+        axios.get(`https://api.thedogapi.com/v1/images/search`,
+        {
+            headers:{
+                "x-api-key": "30777f0e-7f95-4c79-b4b3-b657b6bdd296"
+            }
+        })
+          .then(res => {
+            const data = res.data;
+            console.log(data[0]["url"]);
+            setImage(data[0]["url"]);
+          })
+
+      }
 
     return (
         <div>
+            <h1>HelloHello</h1>
+            <img src={image}/>
+            <button  className = "btn btn-danger" onClick={() => componentDidMount()}> Click me</button>
 
         </div>
     )
