@@ -6,15 +6,19 @@ export default function Component() {
 
   function componentDidMount() {
     axios
-      .get(`https://api.thedogapi.com/v1/images/search`, {
+      .get(`https://api.thedogapi.com/v1/breeds/search/`, {
         headers: {
           "x-api-key": "30777f0e-7f95-4c79-b4b3-b657b6bdd296",
+        },
+        params: {
+          q: "lab",
         },
       })
       .then((res) => {
         const data = res.data;
-        console.log(data[0]["url"]);
-        setImage(data[0]["url"]);
+        console.log(data);
+        //console.log(data[0]["url"]);
+        //setImage(data[0]["url"]);
       });
   }
 
