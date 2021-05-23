@@ -1,33 +1,16 @@
 import React from "react";
-import axios from "axios";
 import Favorites from "./Favorites";
+import ShowDog from './ShowDog';
+import "./style.css";
 
 export default function Component() {
-  let [dog, setImage] = React.useState("");
-
-  function componentDidMount() {
-    axios
-      .get(`https://api.thedogapi.com/v1/images/search`, {
-        headers: {
-          "x-api-key": "30777f0e-7f95-4c79-b4b3-b657b6bdd296",
-        },
-        
-      })
-      .then((res) => {
-        const data = res.data;
-        console.log(data);
-        setImage({
-          "url": data[0]["url"],
-          "id": data[0]["id"]
-        });
-      });
-  }
-
+  let [dog, setDog] = React.useState("");
+  
   return (
     <div>
-      <h1>woofwoof</h1>
-      <img src={dog["url"]}/> {/*kanske ska lägga till id så det går att dölja?*/}
-      <button className="btn btn-danger" onClick={() => componentDidMount()}> {" "} Click me </button>
+      <h1>Woof</h1>
+      <ShowDog setDog={setDog} dog={dog}/>
+            
       <Favorites dog={dog}/>
     </div>
   );
