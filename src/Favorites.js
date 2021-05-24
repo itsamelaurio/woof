@@ -10,7 +10,7 @@ export default function Favorites(props){
 
     function sortBreed(){
         let temp = getFavorites();
-        orderBy(temp,"breed","desc");
+        orderBy(temp,"breed","asc");
         console.log(temp);
     }
     
