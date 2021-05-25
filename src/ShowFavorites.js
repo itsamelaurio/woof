@@ -2,17 +2,13 @@ import React from "react";
 
 export default function ShowFavorites(props){
     function deleteFavorite(id, favorites){
-        console.log(id);
-        console.log("togs bort");
-        /* något åt detta hållet kanske 
-        $.each(favorites, function(index, dog){
-        try{ if(dog.id == id){
-            favorites.splice(index, 1);
-            props.saveFavorites(favorites);
-        }}catch{}
-    })
-
-        */
+    
+        favorites.map((dog, index )=> {
+            try{ if(dog.id == id){
+                favorites.splice(index, 1);
+                props.setFavorites(favorites);
+                localStorage.setItem("favorites", JSON.stringify(favorites));}}
+            catch{}})
     }
     return(
         <div>
