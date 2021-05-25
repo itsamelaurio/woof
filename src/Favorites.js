@@ -6,6 +6,10 @@ export default function Favorites(props){
     // när man trycker på spara hund så sparas inte den hunden man ser utan den förra
     let localFav = getFavorites();
     let [favorites, setFavorites] = React.useState(localFav);
+
+    React.useEffect(() => {
+        localStorage.setItem("favorites", JSON.stringify(favorites));
+      }, [favorites]);
     
     function getFavorites(){
         let local = JSON.parse(localStorage.getItem("favorites"));
@@ -16,10 +20,8 @@ export default function Favorites(props){
         console.log(orderBy(favorites,"breed","asc"));
     }
 
-    async function saveFavorites(){
-        await setFavorites([...favorites, (props.dog)]);
-        await localStorage.setItem("favorites", JSON.stringify(favorites));
-        console.log("added to localstorage")
+    function saveFavorites(){
+        setFavorites([...favorites, (props.dog)]);
         }
     
     function showFavorites(){
