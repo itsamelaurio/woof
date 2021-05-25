@@ -2,7 +2,7 @@ import React from 'react';
 import axios from "axios";
 const $ = window.$;
 
-export default function Navbar() {
+export default function Navbar(props) {
     let [breeds, setBreeds] = React.useState([]);
 
     $(document).ready(function() {
@@ -29,14 +29,29 @@ export default function Navbar() {
           });
       }
 
+
+      $('#dropdown-menu').on('select2:select', function (e) {
+        var data = e.params.data;
+        console.log(data);
+    });
+    
+      
+        
+    
+
       function populateBreeds(){
-          
+        let i = 1;  
         breeds.forEach((breed) => {
             const option = document.createElement("option");
             option.className="dropdown-item";
+            option.value=i;
             var text = document.createTextNode(breed);
             option.appendChild(text);
             document.querySelector('#dropdown-menu').appendChild(option);
+
+
+
+            i++;
         }
         )
       }

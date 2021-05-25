@@ -11,7 +11,7 @@ export default function Component() {
     <div>
       <h1>Woof</h1>
 
-      <Navbar />
+      <Navbar dog = {dog} setDog={setDog}/>
       <ShowDog setDog={setDog} dog={dog}/>    
       <Favorites dog={dog}/>
     </div>
