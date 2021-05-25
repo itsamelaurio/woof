@@ -9,3 +9,9 @@ img {
 #favourites {
   display: none;
 }
+
+.dropdown-menu {
+  height: auto;
+  max-height: 300px;
+  overflow-x: hidden;
+}
