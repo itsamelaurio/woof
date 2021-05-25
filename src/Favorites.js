@@ -4,7 +4,7 @@ import {orderBy} from "lodash";
 
 export default function Favorites(props){
 
-    let [favorites, setFavorites] = React.useState("");
+    let [favorites, setFavorites] = React.useState([]);
 
 
 
