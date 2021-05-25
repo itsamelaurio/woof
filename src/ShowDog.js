@@ -32,17 +32,22 @@ export default function ShowDog(props) {
             
       });
   }
-  
 
+  function saveFavorites(favorites){
+    props.setFavorites([...favorites, (props.dog)]);
+    }
+  
     return (
-        <div className="text-center d-flex flex-column">
+        <div className="text-center d-flex flex-column" >
+          <div id="search-result">
             <div className="p-2">
-                <img src={props.dog["url"]} className="big" alt=""/> {/*kanske ska lägga till id så det går att dölja?*/}
+                <img src={props.dog["url"]} className="big"  alt=""/>
+                <button className="btn btn-danger" onClick={() => saveFavorites(props.favorites)}> Save dog </button>
             </div>
             <div className="p-2">
-                <button className="btn btn-danger" onClick={() => dogCall()}> {" "} Click me </button>
+                <button className="btn btn-danger" onClick={() => dogCall()}> Click me </button>
             </div>
-            
+          </div>
         </div>
     )
 }

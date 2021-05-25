@@ -1,6 +1,19 @@
 import React from 'react'
 
 export default function Navbar() {
+    let faves = document.getElementById("favorites");
+    let search = document.getElementById("search-result");
+    
+    function showFavorites(){
+        faves.style.display = "block";
+        search.style.display = "none";
+
+    }
+    function showSearch(){
+        search.style.display = "block"
+        faves.style.display = "none";
+    }
+    
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <a className="navbar-brand" href="#">Navbar</a>
@@ -10,10 +23,10 @@ export default function Navbar() {
             <div className="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul className="navbar-nav">
                 <li className="nav-item">
-                    <a className="nav-link" href="#" onClick={() => document.getElementById("favourites").style.display = "block"}>Favourites </a>
+                    <a className="nav-link" href="#" onClick={() => showSearch()}>Search</a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="#" onClick={() => document.getElementById("favourites").style.display = "none"}>Search</a>
+                    <a className="nav-link" href="#" onClick={() => showFavorites()}>Favourites </a>
                 </li>
                 <li className="nav-item">
                     <a className="nav-link" href="#">Pricing</a>
