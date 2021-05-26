@@ -14,7 +14,10 @@ export default function Navbar(props) {
           .get(`https://api.thedogapi.com/v1/breeds`, {
             headers: {
               "x-api-key": "30777f0e-7f95-4c79-b4b3-b657b6bdd296",
-            },}).then((res) => {        
+            },
+            
+          })
+          .then((res) => {        
             const data = res.data;
             console.log(data);
             console.log(data["name"]);
@@ -25,12 +28,18 @@ export default function Navbar(props) {
             setBreeds(temp);         
           });
       }
-    $('#dropdown-menu').on('select2:select', function (e) {
+
+
+      $('#dropdown-menu').on('select2:select', function (e) {
         var data = e.params.data;
         console.log(data);
     });
+    
+      
+        
+    
 
-    function populateBreeds(){
+      function populateBreeds(){
         let i = 1;  
         breeds.forEach((breed) => {
             const option = document.createElement("option");
@@ -39,11 +48,17 @@ export default function Navbar(props) {
             var text = document.createTextNode(breed);
             option.appendChild(text);
             document.querySelector('#dropdown-menu').appendChild(option);
-            i++;})
+
+
+
+            i++;
+        }
+        )
       }
 
-    $('#dropdown-menu').empty();
-    populateBreeds();
+      $('#dropdown-menu').empty();
+      populateBreeds();
+
 
     let faves = document.getElementById("favorites");
     let search = document.getElementById("search-result");
