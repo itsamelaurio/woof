@@ -1,13 +1,11 @@
 import React from 'react';
 import axios from "axios";
-const $ = window.$;
+import Select from "react-select";
 
 export default function Navbar(props) {
     let [breeds, setBreeds] = React.useState([]);
-
-    $(document).ready(function() {
-        $('#dropdown-menu').select2();
-    });
+    let [selected, setSelected] = React.useState({});
+    
 
     function breedCall() {
         axios
@@ -20,45 +18,94 @@ export default function Navbar(props) {
           .then((res) => {        
             const data = res.data;
             console.log(data);
-            console.log(data["name"]);
-            let temp = [];
-            for(let i=0;i<data.length;i++){
-                temp.push(data[i]["name"]);
+
+            const result = [];
+            
+
+            for(let i = 0; i < data.length ; i++){
+                result.push({
+                    "value" : data[i]["id"],
+                    "label" : data[i]["name"]
+                });
+            }
+
+            console.log(result);
+            setBreeds(result);
+
+            console.log(breeds);
+             
             }   
-            setBreeds(temp);         
-          });
+                  
+          );
       }
 
 
-      $('#dropdown-menu').on('select2:select', function (e) {
-        var data = e.params.data;
-        console.log(data);
-    });
+      /* $('#dropdown-menu').on('select2:select', function(e) {
+        e.stopImmediatePropagation();
+        console.log( e.params.data.id );
+
+        axios
+      .get(`https://api.thedogapi.com/v1/images/search`, {
+        headers: {
+          "x-api-key": "30777f0e-7f95-4c79-b4b3-b657b6bdd296",
+        },
+        params: {
+            "breed_ids": e.params.data.id
+        }
+      })
+      .then((res) => {        
+        const data = res.data;
+            console.log(data);
+           if (data[0]["breeds"].length === 0){
+            props.setDog({
+              "url": data[0]["url"],
+              "id": data[0]["id"],
+              "breed": ""
+            });
+           }
+           else{
+            props.setDog({
+              "url": data[0]["url"],
+              "id": data[0]["id"],
+              "breed": data[0]["breeds"][0]["name"]
+            });
+           }
+            
+      });
+
+      }); */
     
       
-        
-    
-
-      function populateBreeds(){
-        let i = 1;  
-        breeds.forEach((breed) => {
-            const option = document.createElement("option");
-            option.className="dropdown-item";
-            option.value=i;
-            var text = document.createTextNode(breed);
-            option.appendChild(text);
-            document.querySelector('#dropdown-menu').appendChild(option);
+           
 
 
-
-            i++;
-        }
-        )
-      }
-
-      $('#dropdown-menu').empty();
-      populateBreeds();
-
+      React.useEffect(()=> {
+        axios.get('https://api.thedogapi.com/v1/images/search',{
+            headers: {
+                "x-api-key": "30777f0e-7f95-4c79-b4b3-b657b6bdd296"
+            },
+            params: {
+                "breed_ids" : selected.value
+            }
+        }).then((res) => {
+            const data = res.data;
+            if (data[0]["breeds"].length === 0){
+                props.setDog({
+                  "url": data[0]["url"],
+                  "id": data[0]["id"],
+                  "breed": ""
+                });
+               }
+               else{
+                props.setDog({
+                  "url": data[0]["url"],
+                  "id": data[0]["id"],
+                  "breed": data[0]["breeds"][0]["name"]
+                });
+               }
+        })
+      },[selected])
+     
 
     function showFavorites(){
         document.getElementById("favorites").style.display = "block";
@@ -88,13 +135,16 @@ export default function Navbar(props) {
                 <li className="nav-item">
                     <a className="nav-link" href="#">Pricing</a>
                 </li>
-                <select className="nav-item dropdown" id="dropdown-menu">
-                    <option className="dropdown-item" > Search</option>
-                    <option className="dropdown-item">Action</option>
-                    <option className="dropdown-item">Another action</option>
-                    <option className="dropdown-item">Something else here</option>
+                <Select id="dropdown"
+                    /* {breeds.map(breed => {
+                        return <option value={breed.id}>{breed.name}</option>
+                    })} */
+                    options = {breeds}
+                    onChange = {setSelected}
+                    isSearchable 
                     
-                </select>
+                    
+                />
 
                 </ul>
             </div>
