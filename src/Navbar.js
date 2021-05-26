@@ -103,7 +103,10 @@ export default function Navbar(props) {
                   "breed": data[0]["breeds"][0]["name"]
                 });
                }
-        })
+        }) 
+        
+         
+        console.log(selected);
       },[selected])
      
 

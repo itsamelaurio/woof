@@ -5,7 +5,7 @@ import Navbar from './Navbar';
 import "./style.css";
 
 export default function Component() {
-  let [dog, setDog] = React.useState("");
+  let [dog, setDog] = React.useState(false);
   let faves = getFavorites();
   let [favorites, setFavorites] = React.useState(faves);
   

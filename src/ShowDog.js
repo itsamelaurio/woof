@@ -3,8 +3,6 @@ import axios from 'axios';
 
 export default function ShowDog(props) {
 
-  const [dog, setDog] = useState(false);
-
   function dogCall() {
     axios
       .get(`https://api.thedogapi.com/v1/images/search`, {
@@ -17,14 +15,14 @@ export default function ShowDog(props) {
         const data = res.data;
         console.log(data);
         if (data[0]["breeds"].length === 0) {
-          setDog({
+          props.setDog({
             "url": data[0]["url"],
             "id": data[0]["id"],
             "breed": ""
           });
         }
         else {
-          setDog({
+          props.setDog({
             "url": data[0]["url"],
             "id": data[0]["id"],
             "breed": data[0]["breeds"][0]["name"]
@@ -40,9 +38,9 @@ export default function ShowDog(props) {
   return (
     <div className="text-center d-flex flex-column" >
       <div id="search-result">
-        {dog && <div className="p-2">
-          <h2>{dog.breed}</h2>
-          <img src={dog.url} className="big" alt="" />
+        {props.dog && <div className="p-2">
+          <h2>{props.dog.breed}</h2>
+          <img src={props.dog.url} className="big" alt="" />
           <button id="save" className="btn btn-danger" onClick={() => saveFavorites(props.favorites)}> Save dog </button>
         </div>}
         <div className="p-2">
