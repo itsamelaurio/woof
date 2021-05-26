@@ -60,17 +60,14 @@ export default function Navbar(props) {
       populateBreeds();
 
 
-    let faves = document.getElementById("favorites");
-    let search = document.getElementById("search-result");
-    
     function showFavorites(){
-        faves.style.display = "block";
-        search.style.display = "none";
+        document.getElementById("favorites").style.display = "block";
+        document.getElementById("search-result").style.display = "none";
 
     }
     function showSearch(){
-        search.style.display = "block"
-        faves.style.display = "none";
+        document.getElementById("search-result").style.display = "block"
+        document.getElementById("favorites").style.display = "none";
     }
     
     return (
