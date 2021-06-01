@@ -18,14 +18,16 @@ export default function ShowDog(props) {
           props.setDog({
             "url": data[0]["url"],
             "id": data[0]["id"],
-            "breed": ""
+            "breed": "",
+            "date": new Date().toLocaleString()
           });
         }
         else {
           props.setDog({
             "url": data[0]["url"],
             "id": data[0]["id"],
-            "breed": data[0]["breeds"][0]["name"]
+            "breed": data[0]["breeds"][0]["name"],
+            "date": new Date().toLocaleString()
           });
         }
       });

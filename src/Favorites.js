@@ -7,6 +7,11 @@ export default function Favorites(props) {
         console.log(orderBy(props.favorites, "breed", "asc"))
     }
 
+    function sortDate() {
+        props.setFavorites(orderBy(props.favorites, "date", "asc"))
+        console.log(orderBy(props.favorites, "date", "asc"))
+    }
+
     function deleteFavorite(id, favorites){
         props.setFavorites(favorites.filter((dog) => dog.id !== id))
     }
@@ -15,6 +20,7 @@ export default function Favorites(props) {
         <div> 
             <div id="favorites">
                 <button className="btn btn-danger" onClick={() => sortBreed()}> Sort breed </button>
+                <button className="btn btn-danger" onClick={() => sortDate()}> Sort date </button>
                 <div id="dog-list">
                 {props.favorites.map(dog => <div class="favorite"> <h6>{dog.breed}</h6> <img src="images/delete.png" alt="delete dog" className="delete-dog" onClick={() => deleteFavorite(dog.id, props.favorites)}></img> <img src={dog.url} id={dog.id} /> </div>)}
                 </div>
