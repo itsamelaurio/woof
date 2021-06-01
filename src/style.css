@@ -8,8 +8,22 @@ img {
 }
 #favorites {
   display: none;
+
 }
 
 #dropdown {
   width: 300px;
 }
+
+.delete-dog{
+  width: 30px;
+  height: auto;
+  float:right;
+}
+
+#dog-list{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+

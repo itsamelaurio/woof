@@ -14,7 +14,9 @@ export default function Favorites(props) {
         <div> 
             <div id="favorites">
                 <button className="btn btn-danger" onClick={() => sortBreed()}> Sort breed </button>
-                {props.favorites.map(dog => <img src={dog.url} id={dog.id} onClick={() => deleteFavorite(dog.id, props.favorites)}/>)}
+                <div id="dog-list">
+                {props.favorites.map(dog => <div class="favorite"> <img src="images/delete.png" alt="delete dog" className="delete-dog" onClick={() => deleteFavorite(dog.id, props.favorites)}></img> <img src={dog.url} id={dog.id} /> </div>)}
+                </div>
             </div>
 
         </div>
