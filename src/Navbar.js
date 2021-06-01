@@ -135,9 +135,6 @@ export default function Navbar(props) {
                 <li className="nav-item">
                     <a className="nav-link" href="#" onClick={() => showFavorites()}>Favourites </a>
                 </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="#">Pricing</a>
-                </li>
                 <Select id="dropdown"
                     /* {breeds.map(breed => {
                         return <option value={breed.id}>{breed.name}</option>
