@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import axios from 'axios';
 
 export default function ShowDog(props) {
@@ -13,7 +13,6 @@ export default function ShowDog(props) {
       })
       .then((res) => {
         const data = res.data;
-        console.log(data);
         if (data[0]["breeds"].length === 0) {
           props.setDog({
             "url": data[0]["url"],

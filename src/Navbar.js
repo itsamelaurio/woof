@@ -17,7 +17,6 @@ export default function Navbar(props) {
           })
           .then((res) => {        
             const data = res.data;
-            console.log(data);
 
             const result = [];
             
@@ -29,55 +28,12 @@ export default function Navbar(props) {
                 });
             }
 
-            console.log(result);
             setBreeds(result);
-
-            console.log(breeds);
              
             }   
                   
           );
       }
-
-
-      /* $('#dropdown-menu').on('select2:select', function(e) {
-        e.stopImmediatePropagation();
-        console.log( e.params.data.id );
-
-        axios
-      .get(`https://api.thedogapi.com/v1/images/search`, {
-        headers: {
-          "x-api-key": "30777f0e-7f95-4c79-b4b3-b657b6bdd296",
-        },
-        params: {
-            "breed_ids": e.params.data.id
-        }
-      })
-      .then((res) => {        
-        const data = res.data;
-            console.log(data);
-           if (data[0]["breeds"].length === 0){
-            props.setDog({
-              "url": data[0]["url"],
-              "id": data[0]["id"],
-              "breed": ""
-            });
-           }
-           else{
-            props.setDog({
-              "url": data[0]["url"],
-              "id": data[0]["id"],
-              "breed": data[0]["breeds"][0]["name"]
-            });
-           }
-            
-      });
-
-      }); */
-    
-      
-           
-
 
       React.useEffect(()=> {
         axios.get('https://api.thedogapi.com/v1/images/search',{
@@ -106,9 +62,6 @@ export default function Navbar(props) {
                 });
                }
         }) 
-        
-         
-        console.log(selected);
       },[selected])
      
 
@@ -141,14 +94,9 @@ export default function Navbar(props) {
                     <a className="nav-link" href="#" onClick={() => showSearch()}>Search</a>
                 </li>
                 <Select id="dropdown"
-                    /* {breeds.map(breed => {
-                        return <option value={breed.id}>{breed.name}</option>
-                    })} */
                     options = {breeds}
                     onChange = {setSelected}
-                    isSearchable 
-                    
-                    
+                    isSearchable   
                 />
 
                 </ul>
