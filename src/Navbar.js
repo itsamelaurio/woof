@@ -115,11 +115,14 @@ export default function Navbar(props) {
     function showFavorites(){
         document.getElementById("favorites").style.display = "block";
         document.getElementById("search-result").style.display = "none";
+        document.getElementById("dropdown").style.display = "none";
 
     }
     function showSearch(){
         document.getElementById("search-result").style.display = "block"
+        document.getElementById("dropdown").style.display = "block";
         document.getElementById("favorites").style.display = "none";
+
     }
     
     return (
@@ -132,10 +135,10 @@ export default function Navbar(props) {
             <div className="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul className="navbar-nav">
                 <li className="nav-item">
-                    <a className="nav-link" href="#" onClick={() => showSearch()}>Search</a>
+                    <a className="nav-link" href="#" onClick={() => showFavorites()}>Favourites </a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="#" onClick={() => showFavorites()}>Favourites </a>
+                    <a className="nav-link" href="#" onClick={() => showSearch()}>Search</a>
                 </li>
                 <Select id="dropdown"
                     /* {breeds.map(breed => {
