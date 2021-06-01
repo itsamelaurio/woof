@@ -10,8 +10,8 @@ export default function ShowDog(props) {
           "x-api-key": "30777f0e-7f95-4c79-b4b3-b657b6bdd296",
         },
         params: {
-          "has_breeds" : true
-      }
+          "has_breeds": true
+        }
       })
       .then((res) => {
         const data = res.data;
@@ -36,13 +36,16 @@ export default function ShowDog(props) {
 
   function saveFavorites(favorites) {
     props.setFavorites([...favorites, (props.dog)]);
+
+    alert("The dog is now saved to favorites!");
+
   }
 
   return (
     <div className="text-center d-flex flex-column" >
       <div id="search-result">
         <div className="p-2">
-            <button className="btn btn-danger" onClick={() => dogCall()}> Show new dog </button>
+          <button className="btn btn-danger" onClick={() => dogCall()}> Show new dog </button>
         </div>
         {props.dog && <div className="p-2">
           <h2>{props.dog.breed}</h2>
