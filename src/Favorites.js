@@ -3,7 +3,8 @@ import { orderBy } from "lodash";
 
 export default function Favorites(props) {
     function sortBreed() {
-        console.log(orderBy(props.favorites, "breed", "asc"));
+        props.setFavorites(orderBy(props.favorites, "breed", "asc"))
+        console.log(orderBy(props.favorites, "breed", "asc"))
     }
 
     function deleteFavorite(id, favorites){
