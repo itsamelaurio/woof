@@ -4,11 +4,15 @@ Detta är en applikation för att kunna se och spara bilder på hundar. Du kan f
 
 ## Köra Applikationen
 
-Börja med att hämta hem koden. Du behöver installera saker...? Skriv sedan in:
+Börja med att hämta hem koden. Gå sedan in i mappen "woof" i terminalen och skriv:
+
+### `npm install`
+
+Därefter så startar du applikationen genom att köra:
 
 ### `npm start`
 
-I din terminal då du står i katalogen woof. Du avslutar sedan genom att i terminal köra:
+Du avslutar sedan applikationen genom att i terminalen köra:
 
 ### Windows: `ctrl + C` 
 ### Mac: `cmd + C`
