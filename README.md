@@ -12,6 +12,9 @@ I din terminal då du står i katalogen woof. Du avslutar sedan genom att i term
 
 ### `ctrl + C`
 
+för Mac
+### `cmd + C`
+
 ## Motivering av Ramverk
 
 ### React
