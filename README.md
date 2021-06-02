@@ -1,70 +1,30 @@
-# Getting Started with Create React App
+# WOOF
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Detta är en applikation för att kunna se och spara bilder på hundar. Du kan få upp antingen en slumpmässiga bild på en hund eller söka via ras, och då få upp en bild på den specifika rasen. Du kan även välja att spara en hundbild till dina favoriter. I dina favoriter kan du sedan ta bort bilder och välja om listan ska sorteras efter ras eller efter när bilderna lades till.
 
-## Available Scripts
+## Köra Applikationen
 
-In the project directory, you can run:
+Börja med att hämta hem koden. Du behöver installera saker...? Skriv sedan in:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+I din terminal då du står i katalogen woof. Du avslutar sedan genom att i terminal köra:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### `ctrl + C`
 
-### `npm test`
+## Motivering av Ramverk
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### React
+Vi valde att använda oss av React då detta är ett av de ledande ramverket och mest använda ramverk just nu ([källa](https://www.codica.com/blog/top-javascript-trends/)), vilket kan ses av att det bl.a. är det utan tvekan mest nedladdade via npm ([källa](https://www.npmtrends.com/react-vs-vue-vs-jquery-vs-backbone-vs-svelte-vs-@angular/core)). Det är dessutom mycket eftertraktat ha kunskap om React och kunna jobba med på arbetsmarknaden ([källa](https://medium.com/techmagic/reactjs-vs-angular5-vs-vue-js-what-to-choose-in-2018-b91e028fa91d)). Vi har också valt React eftersom vi alla redan var lite insatta i det och tyckte att det var bättre att faktiskt ha en grunläggande förståelse för ett än att ramverk än att ha väldigt lite koll på två. Dessutom slipper vi inlärningsprocessen som kommer när man börjar med ett helt nytt ramverk. 
 
-### `npm run build`
+React funkar bra ihop med vårt API för projektet då dem annonserar att det är ett av dem ramverk det skulle funka bra ihop med. En annan fördel med React är att ramverket stödjer functional programming, vilket vi sedan tidigare är bekväma med. React sägs även ha en bra dokumentation. Eftersom det är ett av de mest populära ramverken så finns det även mycket hjälp att få på olika på olika sidor som t.ex. stack overflow. Tillsist så anses även React vara ett bra val för oss som är nya till front-end JS ramverk.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Varför inte Vue eller Angular
+En av de huvudsakliga anledningarna är att vi inte har någon erfarenhet av dessa sedan innan och därför känndes det bättre att ta React som vi redan var lite familijära med. Dessutom är dem inte lika populära som React och inte lika relevanta på jobbmarknaden ([källa](https://medium.com/techmagic/reactjs-vs-angular5-vs-vue-js-what-to-choose-in-2018-b91e028fa91d)). 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Vue är inte lika väletablerat som React eller Angular, därför finns det inte heller lika mycket hjälp att få eller kring olika problem på sidor så som stack overflow ([källa](https://medium.com/techmagic/reactjs-vs-angular5-vs-vue-js-what-to-choose-in-2018-b91e028fa91d)).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Angular anses ha en brantare inlärningskurva och kan därför vara svårare att komma igång med ([källa](https://medium.com/techmagic/reactjs-vs-angular5-vs-vue-js-what-to-choose-in-2018-b91e028fa91d)). Då vi är nya till JS ramverk känndes därför dumt att börja med ett ramverk som anses vara svårare.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
