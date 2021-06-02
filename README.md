@@ -10,10 +10,8 @@ Börja med att hämta hem koden. Du behöver installera saker...? Skriv sedan in
 
 I din terminal då du står i katalogen woof. Du avslutar sedan genom att i terminal köra:
 
-### `ctrl + C`
-
-för Mac
-### `cmd + C`
+### Windows: `ctrl + C` 
+### Mac: `cmd + C`
 
 ## Motivering av Ramverk
 
