@@ -14,8 +14,7 @@ Därefter så startar du applikationen genom att köra:
 
 Du avslutar sedan applikationen genom att i terminalen köra:
 
-### Windows: `ctrl + C` 
-### Mac: `cmd + C`
+### `ctrl + C` 
 
 ## Motivering av Ramverk
 
