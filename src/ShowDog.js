@@ -1,7 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 import axios from 'axios';
 
+import Alert from './Alert';
+
 export default function ShowDog(props) {
+
+  const [check, setCheck] = useState(false);
 
   function dogCall() {
     axios
@@ -35,10 +39,9 @@ export default function ShowDog(props) {
   }
 
   function saveFavorites(favorites) {
+    setCheck(true);
+    setTimeout(function(){ setCheck(false) }, 5000);
     props.setFavorites([...favorites, (props.dog)]);
-
-    alert("The dog is now saved to favorites!");
-
   }
 
   return (
@@ -52,6 +55,7 @@ export default function ShowDog(props) {
           <img src={props.dog.url} className="big" alt="" />
         </div>}
         <button id="save" className="btn btn-danger" onClick={() => saveFavorites(props.favorites)}> Save dog </button>
+        { check && <Alert /> }
       </div>
     </div>
   )
