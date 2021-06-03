@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 import axios from 'axios';
-
 import Alert from './Alert';
 
 export default function ShowDog(props) {
 
   const [check, setCheck] = useState(false);
-
+ 
+  //Fetches a random dog from the API
   function dogCall() {
     axios
       .get(`https://api.thedogapi.com/v1/images/search`, {
@@ -37,11 +37,12 @@ export default function ShowDog(props) {
         }
       });
   }
-
+  //Save the current dog to favorites
   function saveFavorites(favorites) {
     setCheck(true);
-    setTimeout(function(){ setCheck(false) }, 5000);
+    setTimeout(function(){ setCheck(false) }, 5000); //Message displayed to the user
     props.setFavorites([...favorites, (props.dog)]);
+    dogCall();  //Calls new dog once this dog is saved
   }
 
   return (
@@ -52,7 +53,7 @@ export default function ShowDog(props) {
         </div>
         {props.dog && <div className="p-2">
           <h2>{props.dog.breed}</h2>
-          <img src={props.dog.url} className="big" alt="" />
+          <img src={props.dog.url} className="big" alt="dog image" />
         </div>}
         <button id="save" className="btn btn-danger" onClick={() => saveFavorites(props.favorites)}> Save dog </button>
         { check && <Alert /> }

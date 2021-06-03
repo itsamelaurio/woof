@@ -5,14 +5,16 @@ import Navbar from './Navbar';
 import "./style.css";
 
 export default function Component() {
-  let [dog, setDog] = React.useState(false);
+  let [dog, setDog] = React.useState(false); //State for the current dog
   let faves = getFavorites();
-  let [favorites, setFavorites] = React.useState(faves);
+  let [favorites, setFavorites] = React.useState(faves);  //State for the users favorites
   
+  //Every time favorites change, update LocalStorage
   React.useEffect(() => {
       localStorage.setItem("favorites", JSON.stringify(favorites));
     }, [favorites]);
-
+  
+    //Returns the favorites from localStorage
   function getFavorites(){
     let localFav = JSON.parse(localStorage.getItem("favorites"));
     if (localFav == null){
