@@ -78,8 +78,9 @@ export default function Navbar(props) {
         document.getElementById("favorites").style.display = "none";
 
     }
-    
-    breedCall();
+    React.useEffect(() => {
+        breedCall();
+     }, [])
     return (
         
         <nav className="navbar navbar-expand-lg navbar-light">
