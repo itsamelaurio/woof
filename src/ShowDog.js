@@ -42,7 +42,6 @@ export default function ShowDog(props) {
     setCheck(true);
     setTimeout(function(){ setCheck(false) }, 5000); //Message displayed to the user
     props.setFavorites([...favorites, (props.dog)]);
-    dogCall();  //Calls new dog once this dog is saved
   }
 
   return (
