@@ -48,14 +48,14 @@ export default function ShowDog(props) {
   return (
     <div className="text-center d-flex flex-column" >
       <div id="search-result">
-        <div className="p-2">
-          <button className="btn btn-danger" onClick={() => dogCall()}> Show new dog </button>
-        </div>
-        {props.dog && <div className="p-2">
+          {props.dog && <div className="p-2">
           <h2>{props.dog.breed}</h2>
           <img src={props.dog.url} className="big" alt="dog image" />
         </div>}
-        <button id="save" className="btn btn-danger" onClick={() => saveFavorites(props.favorites)}> Save dog </button>
+        <div className="p-2" id="buttons">
+          <button className="btn btn-danger button" onClick={() => dogCall()}> Show new dog </button>
+          <button id="save" className="btn btn-danger button" onClick={() => saveFavorites(props.favorites)}> Save dog </button>
+        </div>
         { check && <Alert /> }
       </div>
     </div>

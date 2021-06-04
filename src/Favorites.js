@@ -21,8 +21,11 @@ export default function Favorites(props) {
     return (
         <div> 
             <div id="favorites">
+                <div id="fav-btn">
                 <button className="btn btn-danger" onClick={() => sortBreed()}> Sort by breed </button>
                 <button className="btn btn-danger" onClick={() => sortDate()}> Sort by date </button>
+                </div>
+                
                 <div id="dog-list" className="mb-4">
                 {props.favorites.map(dog =>  <div className="card favorite card-size" key={dog.date}>
                     <img src={dog.url} className="card-img-top dogImg" alt="favorite dog"/>

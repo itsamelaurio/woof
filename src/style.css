@@ -1,11 +1,11 @@
-.container{
+.container {
   padding: 0px;
 }
 
-h1{
+h1 {
   padding-left: 10px;
 }
-.navbar{   
+.navbar {
   padding: 0 10px;
 }
 #dropdown {
@@ -17,35 +17,40 @@ h1{
   width: auto;
 }
 
+.button {
+  margin: 10px;
+}
 #favorites {
   display: none;
 }
-#favorites > button{
+#fav-btn > button {
   margin: 10px;
 }
-#dog-list{
+#dog-list {
   display: flex;
   flex-flow: wrap;
+  justify-content: space-around;
 }
-.favorite{
-  margin:10px;
+
+.favorite {
+  margin: 10px;
 }
 img {
   height: 150px;
   width: auto;
 }
-.delete-dog{
+.delete-dog {
   width: 30px;
   height: auto;
-  float:right;
+  float: right;
 }
 
-.card-body > img:hover{
+.card-body > img:hover {
   cursor: pointer;
 }
 
-.card-body{
-  padding:10px 0;
+.card-body {
+  padding: 10px 0;
 }
 
 .card {
@@ -54,15 +59,20 @@ img {
   border: none;
 }
 
-.dogImg{
+.dogImg {
   height: auto;
 }
 
-@media screen and (max-width: 570px){
-  .big{
+@media screen and (max-width: 570px) {
+  .big {
     max-width: 90vw;
     height: auto;
-    padding:5px;
+    padding: 5px;
   }
 
+  #fav-btn {
+    margin: 10px;
+    display: flex;
+    justify-content: space-around;
+  }
 }
